@@ -28,7 +28,7 @@ client.connect((err) => {
 })
     
 app.get('/', (req, res) => {
-    client.query('SELECT * FROM some_table', (err, result) => {
+    client.query('SELECT * FROM User', (err, result) => {
         if (err) {
             console.log(err)
         } else {
