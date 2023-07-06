@@ -26,19 +26,18 @@ client.connect((err) => {
         pgConnected = true;
     }
 })
-    const response = await client.query('SELECT * FROM some_table')
     
-    app.get('/', (req, res) => {
-        client.query('SELECT * FROM some_table', (err, result) => {
-            if (err) {
-                console.log(err)
-            } else {
-                console.log(result.rows)
-                res.send(result.rows)
-            }
-        });
-    })
-    
-    app.listen(port, () => {
-        console.log(`Lognotes: listening on port ${port}`)
-    })
+app.get('/', (req, res) => {
+    client.query('SELECT * FROM some_table', (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(result.rows)
+            res.send(result.rows)
+        }
+    });
+})
+
+app.listen(port, () => {
+    console.log(`Lognotes: listening on port ${port}`)
+})
