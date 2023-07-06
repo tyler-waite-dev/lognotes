@@ -7,7 +7,7 @@ const { Client } = require("pg")
 const dotenv = require("dotenv")
 dotenv.config()
 
-const pgConnected = false;
+var pgConnected = false;
 
 
 const client = new Client({
